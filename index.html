@@ -3,12 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rock, Paper, Scissors</title>
   </head>
   <body>
+    <header></header>
+    <h1>Rock, Paper, Scissors</h1>
+    <h2>-</h2>
+    <div class="container">
+      <img class="item" src="images/rock.png" alt="">
+      <img class="item" src="images/paper.png" alt="">
+      <img class="item" src="images/scissors.png" alt="">
+      <h3 class="item">Rock</h3>
+      <h3 class="item">Paper</h3>
+      <h3 class="item">Scissors</h3>
+    </div>
+    <div class="outcome">
+      <h3>Computer Chose:</h3>
+      <p>scissors</p>
+    </div>
     <script>
-    let playerSelection = prompt(
-        "Pick either Rock, Paper, or Scissors").toLowerCase();
+    /*let playerSelection = prompt(
+        "Pick either Rock, Paper, or Scissors").toLowerCase();*/
       let computerSelection = computerPlay();
       let playerScore = 0;
       let computerScore = 0;
@@ -72,8 +91,8 @@
 
       function playRoundFiveTimes() {
       while (roundCounter < 5) {
-        let playerSelection = prompt(
-        "Pick either Rock, Paper, or Scissors").toLowerCase();
+        /*let playerSelection = prompt(
+        "Pick either Rock, Paper, or Scissors").toLowerCase();*/
         let computerSelection = computerPlay()
         playRound(playerSelection, computerSelection)
         console.log(`Player: ${playerSelection} Computer: ${computerSelection}`)
