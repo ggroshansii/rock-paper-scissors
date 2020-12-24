@@ -26,8 +26,8 @@
       <p>scissors</p>
     </div>
     <script>
-    /*let playerSelection = prompt(
-        "Pick either Rock, Paper, or Scissors").toLowerCase();*/
+    let playerSelection = prompt(
+        "Pick either Rock, Paper, or Scissors").toLowerCase();
       let computerSelection = computerPlay();
       let playerScore = 0;
       let computerScore = 0;
@@ -91,8 +91,8 @@
 
       function playRoundFiveTimes() {
       while (roundCounter < 5) {
-        /*let playerSelection = prompt(
-        "Pick either Rock, Paper, or Scissors").toLowerCase();*/
+        let playerSelection = prompt(
+        "Pick either Rock, Paper, or Scissors").toLowerCase();
         let computerSelection = computerPlay()
         playRound(playerSelection, computerSelection)
         console.log(`Player: ${playerSelection} Computer: ${computerSelection}`)
