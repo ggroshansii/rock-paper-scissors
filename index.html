@@ -7,6 +7,8 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -15,7 +17,6 @@
   <body>
     <header></header>
     <h1>Rock, Paper, Scissors</h1>
-    
     <h2 id="scoreboard">0 - 0</h2>
     <h2 id="roundResult"></h2>
     <div class="container">
@@ -27,11 +28,17 @@
       <h3 class="item">Scissors</h3>
     </div>
     <div id="computerChoiceDisplay">
+   
       <h3>Computer Chose:</h3>
+
       <p id="computerChoice"></p>
     </div>
+    <p id="gameOver"></p>
     <div id="outcome"></div>
-    <button id="btn-reset">RESET</button> 
+    <div id="reset">
+      <button id="btn-reset">RESET</button> 
+    </div>
+
     <script>
             let playerScore = 0;
             let computerScore = 0;
@@ -149,7 +156,11 @@
                   roundResult.textContent = "This round is a TIE";
                 }
               } else {
-                let gameOver = document.querySelector("#computerChoiceDisplay");
+                let hideComputerChoice = document.querySelector("#computerChoiceDisplay");
+                hideComputerChoice.style.display = "none";
+                let hideRoundResult = document.querySelector("#roundResult");
+                hideRoundResult.style.display = "none";
+                let gameOver = document.querySelector("#gameOver");
                 gameOver.textContent = "GAME OVER";
                 let outcome = document.querySelector("#outcome");
                 if (computerScore > playerScore) {
@@ -166,34 +177,7 @@
           resetButton.addEventListener("click", function(){
             location.reload(true);
           });
-            /*
-            function playRoundFiveTimes() {
-            while (roundCounter < 5) {
-              let playerSelection = prompt(
-              "Pick either Rock, Paper, or Scissors").toLowerCase();
-              let computerSelection = computerPlay()
-              playRound(playerSelection, computerSelection)
-              console.log(`Player: ${playerSelection} Computer: ${computerSelection}`)
-              roundCounter += 1;
-            }
-          }
-            */
-            /*
-            if (computerScore > playerScore) {
-              console.log(
-                `The computer has won, your score is: ${playerScore} and the computer's score: ${computerScore}`
-              );
-            } else if (playerScore > computerScore){
-              console.log(
-                `You have won, your score is: ${playerScore} and the computer's score: ${computerScore}`
-              );
-          } else if (playerScore == computerScore){
-              console.log(
-                `You have tied, your score is: ${playerScore} and the computer's score: ${computerScore}`
-              );
-          }
 
-      */
     </script>
   </body>
 </html>
