@@ -36,6 +36,17 @@ body > h2 {
   font-size: 32px;
 }
 
+#computerChoice {
+    
+}
+
+#computerChoice > img{
+    width: 35px;
+    height: 35px;
+    padding: 0px 0px 0px 15px;
+    transition: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: 25% 25% 25%;
@@ -51,25 +62,28 @@ body > h2 {
   filter: drop-shadow(2px 2px 2px #00cdcd);
 }
 
-img {
+.image {
   top: 0px;
   transition: top 0.5s ease-out;
 }
 
-img:hover {
+.image:hover {
   position: relative;
   top: -15px;
   filter: drop-shadow(8px 8px 8px #00cdcd);
 }
 
-#computerChoiceDisplay{
-    
+
+
+
+#computerChoiceDisplay > h3{
+    font-size: 24px;
 }
 
 #computerChoiceDisplay,
 #outcome {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: auto;
   justify-content: center;
   color: white;
   font-family: "Lobster", cursive;
@@ -79,7 +93,7 @@ img:hover {
 
 #computerChoiceDisplay > h3, p, #outcome{
     font-family: 'Roboto', sans-serif;
-    filter: drop-shadow(3px 3px 3px #000000);
+    filter: drop-shadow(5px 5px 5px #000000);
 }
 
 h3 {
@@ -95,6 +109,7 @@ p {
 
 #computerChoice {
   color: rgb(199, 199, 0);
+  font-size: 35px;
 }
 
 #reset {
@@ -138,8 +153,8 @@ p {
     justify-content: center;
     color: #9e211f; 
     font-weight: 900;
-    font-family: lobster;
+    font-family: 'Creepster', cursive;
     margin: 0 auto;
-    font-size: 36px;
+    font-size: 44px;
     padding: 12px 0px 20px 0px;
 }

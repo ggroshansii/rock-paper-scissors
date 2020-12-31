@@ -10,6 +10,8 @@
       <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Rock, Paper, Scissors</title>
@@ -20,17 +22,15 @@
     <h2 id="scoreboard">0 - 0</h2>
     <h2 id="roundResult"></h2>
     <div class="container">
-      <img id="rockImg" class="item" src="images/rock.png" alt="" />
-      <img id="paperImg" class="item" src="images/paper.png" alt="" />
-      <img id="scissorsImg" class="item" src="images/scissors.png" alt="" />
+      <img id="rockImg" class="item image" src="images/rock.png" alt="" />
+      <img id="paperImg" class="item image" src="images/paper.png" alt="" />
+      <img id="scissorsImg" class="item image" src="images/scissors.png" alt="" />
       <h3 class="item">Rock</h3>
       <h3 class="item">Paper</h3>
       <h3 class="item">Scissors</h3>
     </div>
     <div id="computerChoiceDisplay">
-   
       <h3>Computer Chose:</h3>
-
       <p id="computerChoice"></p>
     </div>
     <p id="gameOver"></p>
@@ -59,7 +59,7 @@
 
             function computerPlay() {
               let computerMove;
-              let randomNum = Math.floor(Math.random() * 9);
+              let randomNum = Math.floor(Math.random() * 8);
               if (randomNum <= 2) {
                 computerMove = "rock";
               } else if (randomNum > 2 && randomNum <= 5) {
@@ -73,8 +73,27 @@
             function playRound(playerSelection, computerSelection) {
               if (playerScore < 5 && computerScore < 5) {
 
+              /*  let imageZone = document.querySelector("#computerChoiceDisplay"); */
                 let computerChoice = document.querySelector("#computerChoice");
                 computerChoice.textContent = `${computerSelection.toUpperCase()}`;
+                if (computerSelection == "rock"){
+                    let image = document.createElement("img");
+                    image.src = "images/rock.png";
+                    computerChoice.appendChild(image);
+                } else if (computerSelection == "paper") {
+                    let image = document.createElement("img");
+                    image.src = "images/paper.png";
+                    computerChoice.appendChild(image);
+                } else if (computerSelection == "scissors"){
+                    let image = document.createElement("img");
+                    image.src = "images/scissors.png";
+                    computerChoice.appendChild(image);
+                }
+  
+
+
+
+
                 if (playerSelection == "rock" && computerSelection == "rock") {
                   console.log("Round is a TIE");
                   let roundResult = document.querySelector("#roundResult");
